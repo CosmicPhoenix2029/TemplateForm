@@ -39,10 +39,7 @@
         </div>
 
         <select class="form-select" aria-label="SubscriptionType" name="subscriptionType" [(ngModel)]="userSettings.subscriptionType">
-            <option selected>Choose your subscription method</option>
-            <option value="Monthly">Monthly</option>
-            <option value="Annual">Annual</option>
-            <option value="Lifetime">Lifetime</option>
+            <option *ngFor="let type of subscriptionTypes | async">{{ type }}</option>
         </select>
 
 
@@ -50,7 +47,10 @@
             <textarea class="form-control" name="notes" id="floatingTextarea" rows="3" [(ngModel)]="userSettings.notes"></textarea>
             <label for="floatingTextarea">Notes</label>
         </div>
-
+        
+        <div [hidden]="!postError" class="alert alert-danger">
+            {{ postErrorMessage }}
+        </div>
         <button class="btn btn-primary">Send</button>
     </form>
 </div>
