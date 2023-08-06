@@ -4,8 +4,9 @@
 
         <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" class="form-control"  name="name" [(ngModel)]="userSettings.name" required #nameField="ngModel">
-            <div [hidden]="nameField.valid || nameField.untouched" class="alert alert-danger">Enter a name</div>
+            <input id="name" class="form-control" name="name" [(ngModel)]="userSettings.name" 
+                required #nameField="ngModel" (blur)="onBlur(nameField)" [class.field-error]="form.submitted && nameField.invalid">
+            <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">Enter a name</div>
         </div>
 
         <div class="form-check form-group">

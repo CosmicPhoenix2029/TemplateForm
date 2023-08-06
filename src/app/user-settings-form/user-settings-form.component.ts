@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserSettings } from '../data/user-settings';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-user-settings-form',
@@ -18,6 +18,10 @@ export class UserSettingsFormComponent {
   };
 
   userSettings: UserSettings = {...this.originalUserSettings}; 
+
+  onBlur(field: NgModel) {
+    console.log(`the name entered is: ${field.valid}`);      
+  }
 
   onSubmit(form: NgForm) {
     //if the form is valid, then log to the console
