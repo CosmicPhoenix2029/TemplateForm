@@ -5,6 +5,40 @@
             <label for="name">Name</label>
             <input id="name" name="name" class="form-control" placeholder="name">
         </div>
+        <div class="form-check form-group">
+            <input class="form-check-input" type="checkbox" value="" id="emailOffers">
+            <label class="form-check-label" for="emailOffers">
+                Email Special Offers
+            </label>
+        </div>
+        <h5>User Interface Styles</h5>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface">
+                <label class="form-check-label" for="lightInterface">
+                    Light
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interfaceStyle" id="MediumInterface">
+                <label class="form-check-label" for="MediumInterface">
+                    Medium
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interfaceStyle" id="darkInterface">
+                <label class="form-check-label" for="darkInterface">
+                    Dark
+                </label>
+            </div>
+        </div>
+        <select class="form-select" aria-label="Subscription Type">
+            <option selected>Choose your subscription method</option>
+            <option value="1">Monthly</option>
+            <option value="2">Annual</option>
+            <option value="3">Lifetime</option>
+          </select>
+          
         <button class="btn btn-primary">Send</button>
     </form>
 </div>
